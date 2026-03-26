@@ -1,27 +1,29 @@
 import banco
 import datetime
-
-print("+--------------------+")
-print("| 1. Cadastrar peças |")
-print("| 2. Pesquisar peças |")
-print("| 3. Deletar peças   |")
-print("| 4. Inserir peças   |")
-print("+--------------------+")
-
-peca = {"id":0,
-        "peca":"",
-        "tipo":"",
-        "parte":"",
-        "veiculos":[""],
-        "fabricante":"",
-        "data_fabricacao":""
-        }
-
-opt = int(input());
-
-
-#TODO Lucas
 while True:
+
+    print("+--------------------+")
+    print("| 1. Cadastrar peças |")
+    print("| 2. Pesquisar peças |")
+    print("| 3. Deletar peças   |")
+    print("| 4. Inserir peças   |")
+    print("| -1. para sair      |")
+    print("+--------------------+")
+
+    peca = {"id":0,
+            "peca":"",
+            "tipo":"",
+            "parte":"",
+            "veiculos":[""],
+            "fabricante":"",
+            "data_fabricacao":""
+            }
+
+    opt = int(input());
+
+
+    #TODO Lucas
+
     if opt ==1:
         print("Insira as informações da peça: ");
         peca["peca"] = input("Qual a peça? ")
@@ -41,9 +43,12 @@ while True:
         peca["data_fabricacao"] = datetime.datetime(ano,mes,dia).strftime("%x")
         banco.inserir(peca)
     if opt ==2:
-            x = input("Pesquisar pelo id ou pelo nome? ")
-            if x is "id":
-                print()
+        id_pesquisa = int(input("digite o id da peça que você gostaria de ver:"))
+        banco.pesquisar(id_pesquisa) 
+        break;
+    if opt == 3:
+        id_pesquisa = int(input("digite o id da peça que você gostaria de deletar:"))
+        banco.deletar(id_pesquisa)
+        break;
     if opt==-1:
          break;
-    opt = int(input());
