@@ -17,11 +17,14 @@ def inserir(json_obj):
 
 #TODO Ansur
 def pesquisar(id_busca):
-  banco = abrir_banco()
-  for i in range(len(banco["pecas"])):
-    if banco["pecas"][i]["id"] == id_busca:
-      print(f"ID: {banco["pecas"][i]["id"]} | {banco["pecas"][i]["peca"]}")
-pesquisar(101)
+    banco = abrir_banco()
+
+    for p in banco["pecas"]:
+        if p["id"] == int(id_busca): 
+            print(f"ID: {p['id']} | {p['peca']}")
+            return
+
+    print("NÃO ENCONTRADO!")
 
 #TODO Miguel
 def atualizar(id_atualizar, novo_nome, novo_tipo, nova_parte, novo_veiculo, nova_fabricante, nova_data):
