@@ -16,8 +16,12 @@ def inserir(json_obj):
         
 
 #TODO Ansur
-def pesquisar(string):
-    banco = abrir_banco();
+def pesquisar(id_busca):
+  banco = abrir_banco()
+  for i in range(len(banco["pecas"])):
+    if banco["pecas"][i]["id"] == id_busca:
+      print(f"ID: {banco["pecas"][i]["id"]} | {banco["pecas"][i]["peca"]}")
+pesquisar(101)
 
 #TODO Miguel
 def atualizar(id_atualizar, novo_nome, novo_tipo, nova_parte, novo_veiculo, nova_fabricante, nova_data):
