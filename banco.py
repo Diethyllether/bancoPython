@@ -20,9 +20,21 @@ def pesquisar(string):
     banco = abrir_banco();
 
 #TODO Miguel
-def atualizar():
-    banco = abrir_banco();
+def atualizar(id_atualizar, novo_nome, novo_tipo, nova_parte):
+    banco = abrir_banco()
+    for p in banco["pecas"]:
+        if p["id"] == id_atualizar:
+            p["peca"] = novo_nome
+            p["tipo"] = novo_tipo
+            p["parte"] = nova_parte
+            with open(path, "w", encoding="utf-8") as caminho:
+                json.dump(banco, caminho, indent=4, ensure_ascii=False)
+            print(f"Peça ID {id_atualizar} atualizada com sucesso!")
+            return
+    print(f"Peça com ID {id_atualizar} não encontrada!")
+            
 
+     
 #TODO Miggs
 def deletar():
     banco = abrir_banco();

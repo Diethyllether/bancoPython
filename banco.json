@@ -1147,14 +1147,16 @@
         },
         {
             "id": 101,
-            "peca": "Retrovisor aero",
-            "tipo": "externo",
-            "parte": "carroceria",
+            "peca": "Volante novo",
+            "tipo": "interior",
+            "parte": "direcao",
             "veiculos": [
                 "RAM"
             ],
             "fabricante": "Brasil PC",
-            "data_fabricacao": "10/02/20"
+            "data_fabricacao": "10/02/20",
+            "preco": 100.0,
+            "quantidade": 200
         }
     ]
 }
