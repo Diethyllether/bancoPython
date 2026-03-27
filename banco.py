@@ -21,7 +21,7 @@ def pesquisar(id_busca):
 
     for p in banco["pecas"]:
         if p["id"] == int(id_busca): 
-            print(f"ID: {p['id']} | {p['peca']}")
+            print(f"ID: {p['id']} | {p['peca']} | {p['tipo']} | {p['parte']} | {p['veiculos']} | {p['fabricante']} | {p['data_fabricacao']}")
             return
 
     print("NÃO ENCONTRADO!")
@@ -46,5 +46,17 @@ def atualizar(id_atualizar, novo_nome, novo_tipo, nova_parte, novo_veiculo, nova
 
      
 #TODO Miggs
-def deletar():
+def deletar(id_deletar):
     banco = abrir_banco();
+
+    for peca in banco["pecas"]:
+        if peca["id"] == id_deletar:
+            banco["pecas"].remove(peca)
+
+            with open(path, "w", encoding="utf-8") as caminho:
+                json.dump(banco, caminho, indent=4, ensure_ascii=False)
+
+            print("Peça deletada com sucesso!")
+            break
+    else:
+        print("Peça não encontrada.")

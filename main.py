@@ -40,6 +40,9 @@ while True:
         ano = int(input("Ano de fabricação: "))
         mes = int(input("Mes de fabricação: "))
         dia = int(input("Dia de fabricação: "))
+        input("Qual o preço da peça?")
+        input("Qual o peso da peça?")
+        input("Qual o tamanho da peça?")
         peca["data_fabricacao"] = datetime.datetime(ano,mes,dia).strftime("%x")
         banco.inserir(peca)
     if opt ==2:
@@ -68,8 +71,11 @@ while True:
         ano = int(input("Ano de fabricação: "))
         mes = int(input("Mes de fabricação: "))
         dia = int(input("Dia de fabricação: "))
+        input("Qual o preço da peça?")
+        input("Qual o peso da peça?")
+        input("Qual o tamanho da peça?")
         peca["data_fabricacao"] = datetime.datetime(ano,mes,dia).strftime("%x")
-        banco.atualizar(peca["id"],peca["peca"],peca["tipo"],peca["parte"],peca["fabricante"],peca["data_fabricacao"])
+        banco.atualizar(peca["id"],peca["peca"],peca["tipo"],peca["parte"],peca["veiculos"],peca["fabricante"],peca["data_fabricacao"])
       
     if opt==-1:
          break;
